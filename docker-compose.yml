@@ -1,14 +1,10 @@
-version: '3.8'
 services:
   server:
-    build: ./Server
+    image: moonknightmaf/pixelboard-server:latest
     ports:
       - "3001:3001"
   client:
-    build:
-      context: ./Client
-      args:
-        VITE_SOCKET_URL: http://localhost:3001
+    image: moonknightmaf/pixelboard-client:latest
     ports:
       - "8081:80"
     depends_on:
