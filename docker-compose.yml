@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  server:
+    build: ./Server
+    ports:
+      - "3001:3001"
+  client:
+    build:
+      context: ./Client
+      args:
+        VITE_SOCKET_URL: http://localhost:3001
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
