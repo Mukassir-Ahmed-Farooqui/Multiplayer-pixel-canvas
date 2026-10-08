@@ -21,6 +21,14 @@ app.get('/pixel-wake', (req, res) => {
   res.send('true'); // Respond with 'true'
 });
 
+app.get('/api/health', (req, res) => {
+  res.status(200).json({
+    status: 'healthy',
+    service: 'multiplayer-pixel-canvas-backend',
+    timestamp: new Date().toISOString()
+  });
+});
+
 io.on('connection', (socket) => {
   if (connectedClients >= MAX_CONNECTIONS) {
     socket.disconnect(true);

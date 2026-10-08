@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pixelboard-server-service
+  namespace: pixel-canvas
+spec:
+  type: LoadBalancer
+  selector:
+    app: pixelboard-server
+  ports:
+    - protocol: TCP
+      port: 3001
+      targetPort: 3001

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pixelboard-client
+  namespace: pixel-canvas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pixelboard-client
+  template:
+    metadata:
+      labels:
+        app: pixelboard-client
+    spec:
+      containers:
+      - name: client
+        image: moonknightmaf/pixelboard-client:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
