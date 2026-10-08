@@ -1,4 +1,4 @@
-# Realtime Pixel Drawing Canvas with WebSocket Integration
+# Realtime Pixel Drawing Canvas with WebSocket Integration and Automating the pipeline with Jenkins
 
 ## Deployed Application
 
